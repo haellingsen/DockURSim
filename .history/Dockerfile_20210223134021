@@ -1,8 +1,8 @@
 FROM lsiobase/guacgui:latest
 
 # Set Version Information
-ARG BUILD_DATE="03/06/21"
-ARG VERSION="5.11.0.108249"
+ARG BUILD_DATE="23/02/21"
+ARG VERSION="5.1.2.40245"
 LABEL build_version="URSim Version: ${VERSION} Build Date: ${BUILD_DATE}"
 LABEL maintainer="Harald Ellingsen"
 LABEL MAINTAINER="Harald Ellingsen"
@@ -37,11 +37,11 @@ RUN \
     # Make sure we are in the root
     cd / && \ 
     # Download URSim Linux tar.gz
-    curl https://s3-eu-west-1.amazonaws.com/ur-support-site/115608/URSim_Linux-5.11.0.108249.tar -o URSim-Linux.tar && \
+    curl https://s3-eu-west-1.amazonaws.com/ur-support-site/45450/URSim_Linux-5.1.2.40245.tar.gz -o URSim-Linux.tar.gz && \
     # Extract tarball
-    tar xvf URSim-Linux.tar && \
+    tar xvzf URSim-Linux.tar.gz && \
     #Remove the tarball
-    rm URSim-Linux.tar && \
+    rm URSim-Linux.tar.gz && \
     # Rename the URSim folder to jus ursim 
     mv  /ursim* /ursim
 

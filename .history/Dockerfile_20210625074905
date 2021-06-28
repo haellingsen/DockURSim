@@ -37,11 +37,11 @@ RUN \
     # Make sure we are in the root
     cd / && \ 
     # Download URSim Linux tar.gz
-    curl https://s3-eu-west-1.amazonaws.com/ur-support-site/115608/URSim_Linux-5.11.0.108249.tar -o URSim-Linux.tar && \
+    curl https://s3-eu-west-1.amazonaws.com/ur-support-site/115608/URSim_Linux-5.11.0.108249.tar -o URSim-Linux.tar.gz && \
     # Extract tarball
-    tar xvf URSim-Linux.tar && \
+    tar xvzf URSim-Linux.tar.gz && \
     #Remove the tarball
-    rm URSim-Linux.tar && \
+    rm URSim-Linux.tar.gz && \
     # Rename the URSim folder to jus ursim 
     mv  /ursim* /ursim
 
