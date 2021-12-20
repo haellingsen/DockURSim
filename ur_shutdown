@@ -1,0 +1,9 @@
+#!/bin/bash
+
+netcat -l localhost 29999  # port 12345
+exec 6<>/dev/tcp/localhost/29999
+
+while read <&6
+do
+        echo "shutdown"
+done

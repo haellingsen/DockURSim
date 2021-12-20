@@ -29,6 +29,9 @@ RUN \
     # Change java alternatives so we use openjdk8 (required by URSim) not openjdk11 that comes with guacgui
     update-alternatives --install /usr/bin/java java /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java 10000
 
+RUN \
+    apt install -y iputils-ping net-tools
+
 # Setup JAVA_HOME
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 
@@ -68,6 +71,7 @@ RUN \
     ./install.sh && \
     #
     echo "Installed URSim"
+
 
 RUN \     
     echo "**** Clean Up ****" && \
